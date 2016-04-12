@@ -1,14 +1,25 @@
 
 {{#each model as |user|}}
-  <div clas="heading">
-    {{user.firstName}}
+<div class="card">
+  <div class="heading ">
+    <h4>{{user.firstName}} {{user.lastName}}</h4>
+    <div class="contact">
+      <h5>Contact Info</h5>
+      Address: {{user.address}}<br>
+      Email: {{user.email}}<br>
+      Phone: {{user.phoneNumber}}
+    </div>
   </div>
 
   <div class="skills">
-
+    <h5>Skills</h5>
+    <div class="chip">
+      {{user.skills}}
+    </div>
   </div>
-
-  <div class="contact">
-
+  <div class="feedBack">
+    <h5>Comments: </h5>
+    {{user.feedBack}}
   </div>
+</div>
 {{/each}}

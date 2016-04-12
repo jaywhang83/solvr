@@ -1,5 +1,16 @@
 <h2 id="title">Solvr</h2>
 <!-- navbar goes here -->
+<div class='page-header'>
+    <h5>You must be signed in to use this app</h5>
+</div>
+<div class='list-group'>
+    {{#link-to 'sign-up' class='list-group-item'}}
+        Sign Up
+    {{/link-to}}
+    {{#link-to 'sign-in' class='list-group-item'}}
+        Sign In
+    {{/link-to}}
+</div>
 
 <div class="container">
   {{outlet}}
@@ -7,6 +18,6 @@
 
 
 <footer>
-  
+
 </footer>
 {{md-modal-container}}

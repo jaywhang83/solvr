@@ -1,0 +1,15 @@
+<form>
+   <div class="input-field">
+     <label for="question">Question:</label>
+     {{input type="text" value=question}}
+   </div>
+   <div class="input-field">
+     <label for="author">Author:</label>
+     {{input type="text" value=author}}
+   </div>
+   <div class="input-field">
+     <label for="body">Explanation:</label>
+     {{input type="text" value=body}}
+   </div>
+   <button class="btn"{{action 'addQuestion'}}>Submit</button>
+ </form>
