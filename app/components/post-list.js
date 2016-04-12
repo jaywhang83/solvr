@@ -12,7 +12,20 @@ export default Ember.Component.extend({
   }),
   actions: {
     changeSorting(value){
-      this.set('index', value);
+      if(value === 'all'){
+      this.set('index', this.get('posts').get('length'));
+      }
+      else{
+        this.set('index', value);
+      }
+    },
+    changeFilter(value){
+      if(value === 'date'){
+        this.set('filter', ['date:desc']);
+      }
+      if(value === 'reward'){
+        this.set('filter', ['reward:desc']);
+      }
     }
   }
 });
