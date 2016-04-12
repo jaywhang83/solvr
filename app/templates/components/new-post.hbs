@@ -1,0 +1,17 @@
+{{#if isSelected}}
+  <form>
+    <label for="title">Problem Name: </label>
+    {{input value=title}}
+    <label for="location">Location: </label>
+    {{input value=location}}
+    <label for="reward">Reward: $</label>
+    {{input value=reward type=number}}
+    <label for="description">description: </label>
+    {{input value=description}}
+    <button type="button" {{action 'submitForm'}}>Submit</button>
+    <button type="button" {{action 'showForm'}}>Undo</button>
+  </form>
+  {{else}}
+    <button type="button" {{action 'showForm'}}>New Post</button>
+  {{/if}}
+<h1>here</h1>
