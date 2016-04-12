@@ -9,5 +9,6 @@ export default Model.extend({
   reward: DS.attr(),
   date: DS.attr(),
   isOpen: DS.attr(),
+  latlng: DS.attr()
   // solvr: DS.attr()
 });

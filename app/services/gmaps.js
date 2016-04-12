@@ -11,17 +11,22 @@ export default Ember.Service.extend({
   },
   geocodeAddress(address, container){
     var self = this;
-    this.geocoder.geocode({'address': address}, function(results, status) {
-      if(status === google.maps.GeocoderStatus.OK){
-        var options = {
-          center: results[0].geometry.location,
-          zoom: 14
-        };
-        self.createMap(container, options);
-      }
-      else {
-         alert('Geocode was not successful for the following reason: ' + status);
-      }
+    return new Ember.RSVP.Promise(function(resolve, reject){
+      self.geocoder.geocode({'address': address}, function(results, status) {
+        if(status === google.maps.GeocoderStatus.OK){
+          resolve(results[0].geometry.location);
+        }
+        else {
+          reject(alert('Geocode was not successful for the following reason: ' + status));
+        }
+      });
     });
+  },
+  createMarker(map, position){
+    var marker = new google.maps.Marker({
+      map: map,
+      position: position
+    });
+    return marker;
   }
 });
