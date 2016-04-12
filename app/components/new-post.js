@@ -7,15 +7,17 @@ export default Ember.Component.extend({
       this.get('isSelected')? this.set('isSelected', false): this.set('isSelected', true);
     },
     submitForm(){
+      var random = Math.floor(Math.random() * 100) +1;
       var params = {
-        title: this.get('title'),
-        location: this.get('location'),
-        reward: this.get('reward'),
-        description: this.get('description'),
+        user: 'user' + random,
+        title: this.get('title')? this.get('title'): 'title' + random,
+        location: this.get('location')? this.get('location'): 'location' + random,
+        reward: this.get('reward')? this.get('reward'): random,
+        description: this.get('description')? this.get('description'): 'description' + random,
         isOpen: true,
         date: new Date()
       };
-      console.log(params);
+
       this.sendAction('sendPost', params);
     }
   }

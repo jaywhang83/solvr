@@ -9,7 +9,6 @@ export default Ember.Route.extend({
   actions: {
     savePost(params){
       var newPost = this.store.createRecord('post', params);
-      console.log(newPost);
       newPost.save();
       this.transitionTo('postboard');
     }
