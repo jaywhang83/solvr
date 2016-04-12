@@ -1,4 +1,7 @@
 <h2>Current Jobs: </h2>
+{{sorting-buttons sendOption="changeSorting"}}
+<div>
 {{#each filteredList as |post|}}
   {{post-tile post=post}}
 {{/each}}
+</div>
