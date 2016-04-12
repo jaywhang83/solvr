@@ -11,7 +11,19 @@
         Sign In
     {{/link-to}}
 </div>
-
+<div class='container'>
+        <div class='navbar-brand'>EmberFirebaseDemo</div>
+        <div class='navbar-right'>
+            {{#if session.isAuthenticated}}
+                <button
+                    class='btn btn-default navbar-btn'
+                    {{action 'signOut'}}
+                >
+                    {{fa-icon 'sign-out'}} Sign Out
+                </button>
+            {{/if}}
+        </div>
+    </div>
 <div class="container">
   {{outlet}}
 </div>
