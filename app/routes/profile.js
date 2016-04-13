@@ -7,8 +7,19 @@ export default Ember.Route.extend({
         orderBy: 'email',
         equalTo: params.email
       }).then(function(results){
-   return results.get('firstObject');
- })
+      return results.get('firstObject');
+      })
     });
+  }
+  actions: {
+    update(profile, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key] !== undefined) {
+          profile.set(,params[key]);
+        }
+      });
+      profile.save();
+      this.transitionTo('profile');
+    }
   }
 });

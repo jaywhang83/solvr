@@ -1,5 +1,12 @@
 import Model from 'ember-data/model';
 
 export default Model.extend({
-  email: DS.attr()
+  firstName: DS.attr(),
+  lastName: DS.attr(),
+  // post: DS.hasMany('post', { async: true }),
+  email: DS.attr(),
+  address: DS.attr(),
+  phoneNumber: DS.attr(),
+  skills: DS.attr(),
+  // feedBack: DS.()
 });
