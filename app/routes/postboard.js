@@ -5,5 +5,10 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       posts: this.store.findAll('post'),
     });
+  },
+  actions: {
+    accessDenied() {
+      this.transitionTo('/');
+    }
   }
 });
