@@ -43,6 +43,28 @@ export default Ember.Service.extend({
        var newMarker = self.createMarker(map, address);
        markers.push(newMarker);
      });
-   self.set('postboard-markers', markers);  
+   self.set('postboard-markers', markers);
+ },
+ getDistance(address1, address2){
+   function toRad(x) {
+     return x * Math.PI / 180;
+  }
+
+    var lat2 = address2.lat;
+    var lon2 = address2.lng;
+    var lat1 = 45.523;
+    var lon1 = -122.67;
+
+    var R = 6371;
+    var x1 = lat2-lat1;
+    var dLat = toRad(x1);
+    var x2 = lon2-lon1;
+    var dLon = toRad(x2);
+    var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon/2) * Math.sin(dLon/2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    var d = R * c;
+
+    return d;
  }
 });

@@ -7,7 +7,11 @@ export default Ember.Component.extend({
   filter: ['date:desc'],
   filteredList: Ember.computed('sortedList', 'index', function(){
     var limit = this.get('index');
+    var self = this;
     return this.get('sortedList').filter(function(post, index){
+      var address = JSON.parse(post.get('latlng'));
+      console.log(post.get('location'));
+      console.log(self.get('gmaps').getDistance(address, address));
       return index < limit;
     });
   }),
