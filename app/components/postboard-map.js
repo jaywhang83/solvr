@@ -11,9 +11,7 @@ export default Ember.Component.extend({
       zoom: 12
     };
     var map = this.get('gmaps').createMap(container, options);
-    posts.forEach(function(post){
-      var address = JSON.parse(post.get('latlng'));
-        self.get('gmaps').createMarker(map, address);
-      });
+    self.get('gmaps').set('postboard-map', map);
+    self.get('gmaps').reloadMarkers(posts);
   }
 });

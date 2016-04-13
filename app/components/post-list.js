@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  gmaps: Ember.inject.service('gmaps'),
   index: 5,
   sortedList: Ember.computed.sort('posts', 'filter'),
   filter: ['date:desc'],
@@ -18,6 +19,8 @@ export default Ember.Component.extend({
       else{
         this.set('index', value);
       }
+      this.get('gmaps').clearMarkers();
+      this.get('gmaps').reloadMarkers(this.get('filteredList'));
     },
     changeFilter(value){
       if(value === 'date'){

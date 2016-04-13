@@ -9,7 +9,7 @@ export default Ember.Service.extend({
   getCenter(lat, lng){
     return new this.googleMaps.LatLng(lat, lng);
   },
-  geocodeAddress(address, container){
+  geocodeAddress(address){
     var self = this;
     return new Ember.RSVP.Promise(function(resolve, reject){
       self.geocoder.geocode({'address': address}, function(results, status) {
@@ -28,5 +28,21 @@ export default Ember.Service.extend({
       position: position
     });
     return marker;
-  }
+  },
+  clearMarkers(){
+   this.get('postboard-markers').forEach(function(marker){
+     marker.setMap(null);
+   })
+ },
+ reloadMarkers(posts){
+   var self = this;
+   var map = this.get('postboard-map');
+   var markers = [];
+   posts.forEach(function(post){
+     var address = JSON.parse(post.get('latlng'));
+       var newMarker = self.createMarker(map, address);
+       markers.push(newMarker);
+     });
+   self.set('postboard-markers', markers);  
+ }
 });
