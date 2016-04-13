@@ -5,10 +5,22 @@ export default Ember.Controller.extend({
   actions: {
     signUp() {
       let controller = this;
-      this.get('firebase').createUser({
+      var params = {
         email: this.get('email') || '',
-        password: this.get('password') || '',
-      }, (error, data) => {
+        firstName: this.get('firstName') || '',
+        lastName: this.get('lastName') || '',
+        address: this.get('address') || '',
+        phoneNumber: this.get('phoneNumber') || '',
+        skills: this.get('skills') || ''
+      }
+      var newProfile = this.store.createRecord('user', params);
+      console.log(params.firstName);
+      newProfile.save();
+      var signUpParams = {
+        email: this.get('email') || '',
+        password: this.get('password') || ''
+      }
+      this.get('firebase').createUser(signUpParams, (error, data) => {
         if (error) {
           console.log(error);
         } else {
@@ -20,3 +32,10 @@ export default Ember.Controller.extend({
     }
   }
 });
+
+
+// saveProfile(params) {
+//   var newProfile = this.store.createRecord('user', params);
+//   newProfile.save();
+//   this.transitionTo('profile');
+// }

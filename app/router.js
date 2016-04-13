@@ -6,7 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('profile');
+  this.route('profile', {path: '/user/:user_email'});
   this.route('sign-up');
   this.route('sign-in');
   this.route('new-profile');

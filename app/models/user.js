@@ -8,5 +8,5 @@ export default Model.extend({
   address: DS.attr(),
   phoneNumber: DS.attr(),
   skills: DS.attr(),
-  feedBack: DS.attr()
+  // feedBack: DS.()
 });
