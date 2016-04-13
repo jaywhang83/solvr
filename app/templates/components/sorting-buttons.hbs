@@ -1,9 +1,11 @@
-<label for="">Show: </label>
-<button type="button" {{action 'sendOption' 5 }}>5</button>
-<button type="button" {{action 'sendOption' 10 }}>10</button>
-<button type="button" {{action 'sendOption' 20 }}>20</button>
-<button type="button" {{action 'sendOption' 'all' }}>All</button>
-
 <label>Sort by: </label>
 <button type="button" {{action 'sendFilter' 'date' }}>Date</button>
 <button type="button" {{action 'sendFilter' 'reward' }}>Reward</button>
+<button type="button" {{action 'sendFilter' 'distance' }}>Distance</button>
+
+<label>Radius: </label>
+<button type="button" {{action 'sendRadius' 50 }}>50</button>
+<button type="button" {{action 'sendRadius' 250 }}>250</button>
+<button type="button" {{action 'sendRadius' 500 }}>500</button>
+<button type="button" {{action 'sendRadius' 1000 }}>1000</button>
+<button type="button" {{action 'sendRadius' 10000 }}>All</button>
