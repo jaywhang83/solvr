@@ -4,8 +4,6 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'solvr',
     environment: environment,
-    firebase: 'https://solvrapp.firebaseio.com/',
-    torii: {sessionServiceName: 'session'},
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -19,15 +17,9 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    contentSecurityPolicy: {
-    'default-src': "'none'",
-    'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com",
-    'font-src': "'self'",
-    'connect-src': "'self' wss://*.firebaseio.com",
-    'img-src': "'self' *",
-    'style-src': "'self' 'unsafe-inline'",
-    'frame-src': "'self' https://*.firebaseio.com"
-  }
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
+    }
   };
 
   if (environment === 'development') {
