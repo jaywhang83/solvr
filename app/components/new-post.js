@@ -14,7 +14,7 @@ export default Ember.Component.extend({
       this.get('gmaps').geocodeAddress(location).then(function(result){
         var latlng = JSON.stringify(result);
         var params = {
-          user: 'user' + random,
+          user: self.get('user'),
           title: self.get('title')? self.get('title'): 'title' + random,
           location: location,
           latlng: latlng,

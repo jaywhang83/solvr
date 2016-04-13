@@ -1,4 +1,4 @@
-<div>  
+<div>
     <h1>Sign Up</h1>
 </div>
 {{input
@@ -13,6 +13,33 @@
     value=password
     placeholder='password'
 }}
-<button{{action 'signUp'}}>
-    {{fa-icon 'user-plus'}} Sign Up
-</button>
+<form class="input-field">
+  <div>
+    <label for="firstName">First Name</label>
+    {{input value=firstName}}
+  </div>
+
+  <div class="input-field">
+    <label for="lastName">Last Name</label>
+    {{input value=lastName}}
+  </div>
+
+  <div class="">
+    <label for="address">Address</label>
+    {{input value=address type=number}}
+  </div>
+
+  <div class="">
+    <label for="phoneNumber">Phone Number</label>
+    {{input value=phoneNumber}}
+  </div>
+
+  <div class="">
+    <label for="skills">Skills</label>
+    {{input value=skills}}
+  </div>
+
+  <button{{action 'signUp'}}>
+      {{fa-icon 'user-plus'}} Sign Up
+  </button>
+</form>

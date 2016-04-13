@@ -2,7 +2,7 @@ import Model from 'ember-data/model';
 
 
 export default Model.extend({
-  user: DS.attr(),
+  user: DS.belongsTo('user',{ async : true }),
   title: DS.attr(),
   description: DS.attr(),
   location: DS.attr(),

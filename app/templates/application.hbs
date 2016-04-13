@@ -1,16 +1,35 @@
-<h2 id="title">SOLVR</h2>
-{{#link-to 'postboard'}}
-<h1>Posts</h1>
-{{/link-to}}
-{{#link-to 'admin'}}
-<h1>Admin</h1>
-{{/link-to}}
-{{#link-to 'index'}}
-<h1>Home</h1>
-{{/link-to}}
-{{outlet}}
-{{#if session.isAuthenticated}}
-  <button {{action 'signOut'}}>
-  {{fa-icon 'sign-out'}} Sign Out
-  </button>
-{{/if}}
+<h2 id="title">Solvr</h2>
+<!-- navbar goes here -->
+<div class='page-header'>
+    <h5>You must be signed in to use this app</h5>
+</div>
+<div class='list-group'>
+    {{#link-to 'sign-up' class='list-group-item'}}
+        Sign Up
+    {{/link-to}}
+    {{#link-to 'sign-in' class='list-group-item'}}
+        Sign In
+    {{/link-to}}
+    <!-- () -->
+    {{#link-to 'postboard'}}
+    <h1>Posts</h1>
+    {{/link-to}}
+    {{#link-to 'index'}}
+    <h1>Home</h1>
+    {{/link-to}}
+    {{#if session.isAuthenticated}}
+      <button {{action 'signOut'}}>
+      {{fa-icon 'sign-out'}} Sign Out
+      </button>
+    {{/if}}
+    <!-- () -->
+</div>
+<div class="container">
+  {{outlet}}
+</div>
+
+
+<footer>
+
+</footer>
+{{md-modal-container}}
