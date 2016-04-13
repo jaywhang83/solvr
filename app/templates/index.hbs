@@ -2,8 +2,11 @@
     <h1>You must be signed in to use this app</h1>
 </div>
 <div>
-    {{#link-to 'signup' class='list-group-item'}}
+    {{#link-to 'sign-up' class='list-group-item'}}
         Sign Up
+    {{/link-to}}
+    {{#link-to 'sign-in' class='list-group-item'}}
+        Sign In
     {{/link-to}}
 </div>
 {{outlet}}
