@@ -1,0 +1,32 @@
+{ "users": [{
+  "firstName": "Thommy",
+  "lastName": "Jones",
+  "post": "I need to know.",
+  "email": "thommy@aol.com",
+  "address": "123 main st",
+  "phoneNumber": "123-4567-8910",
+  "skills": "I have lots of skills",
+  "feedBack": "I love this site!"
+
+  }, {
+  "firstName": "Debra",
+  "lastName": "McDoogan",
+  "post": "Why not blue?",
+  "email": "debra@live.com",
+  "address": "456 1st st",
+  "phoneNumber": "555-555-5555",
+  "skills": "welding",
+  "feedBack": ""
+
+    }, {
+  "firstName": "Ray",
+  "lastName": "Trombone",
+  "post": "I think so.",
+  "email": "Ray@gmail.com",
+  "address": "345 21st st",
+  "phoneNumber": "444-444-4444",
+  "skills": "none",
+  "feedBack": "boo"
+
+    }]
+  }
