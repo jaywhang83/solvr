@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  signUp: false, 
   firebase: Ember.inject.service(),
   actions: {
     signUp(){
