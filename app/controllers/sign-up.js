@@ -5,10 +5,13 @@ export default Ember.Controller.extend({
   actions: {
     signUp(){
       let controller = this;
-      this.get('firebase').createUser({
-        email: this.get('email') || '',
-        password: this.get('password') || '',
-      }, (error, data) => {
+      var params = {
+        email: this.get('email') || ''
+      }
+      var newUser = this.store.createRecord('profile', params);
+      params.password = this.get('password' || '');
+      newUser.save();
+      this.get('firebase').createUser(params, (error, data) => {
         if(error) {
           console.log(error);
         } else {
