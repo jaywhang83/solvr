@@ -1,0 +1,9 @@
+<div class="post">
+  {{#link-to 'post' post.id}}
+    <h3>{{post.title}} - By: {{post.user}}</h3>
+  {{/link-to}}
+  <h3></h3>
+  <h4>{{post.location}}</h4>
+  <h4>{{date-format post.date}}</h4>
+  <p>Reward: ${{post.reward}}</p>
+</div>

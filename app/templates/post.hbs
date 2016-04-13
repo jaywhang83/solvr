@@ -1,0 +1,6 @@
+{{outlet}}
+  <h2>{{model.post.title}} - By: {{model.post.user}}</h2>
+<h3>{{date-format model.post.date}}</h3>
+<p>{{model.post.description}}</p>
+<p>Reward: ${{model.post.reward}}</p>
+{{post-map post=model.post}}
