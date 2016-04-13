@@ -9,6 +9,9 @@ export default Model.extend({
   reward: DS.attr(),
   date: DS.attr(),
   isOpen: DS.attr(),
-  latlng: DS.attr()
+  latlng: DS.attr(),
+  distance: Ember.computed('reward', function(){
+    console.log('hello');
+  })
   // solvr: DS.attr()
 });

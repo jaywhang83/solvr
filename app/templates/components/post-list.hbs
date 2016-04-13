@@ -3,6 +3,7 @@
 {{sorting-buttons sendOption="changeSorting" sendFilter="changeFilter" sendRadius="changeRadius"}}
 <div>
 {{#each filteredList as |post|}}
+{{post.distance}}
   {{post-tile post=post}}
 {{/each}}
 </div>
