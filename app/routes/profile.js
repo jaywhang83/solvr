@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params){
+    var session = this.get('session');
     return Ember.RSVP.hash({
       user: this.store.findAll('user').then(function(results){
         return results.filter(function(user){
-          return user.get('email') === params.email;
+          return user.get('email') === session.get('currentUser').email;
         })
       })
     });

@@ -10,7 +10,7 @@ Router.map(function() {
   this.authenticatedRoute('post', {path: 'post/:post_id'});
   this.route('sign-up');
   this.route('sign-in');
-  this.authenticatedRoute('profile', {path: 'profile/:email'});
+  this.authenticatedRoute('profile', {path: 'profile/:user_id'});
 });
 
 export default Router;

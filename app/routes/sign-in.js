@@ -3,8 +3,8 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   beforeModel() {
     if (this.get('session.isAuthenticated')) {
-      var email = this.get('session').get('currentUser').email;
-      this.transitionTo('profile', email);
-    }
+      var user_id = this.get('session').get('uid');
+      this.transitionTo('profile', user_id);
   }
+}
 });
