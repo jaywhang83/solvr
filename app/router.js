@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('postboard');
   this.route('post', {path: 'post/:post_id'});
   this.route('admin');
+  this.route('signup');
 });
 
 export default Router;
