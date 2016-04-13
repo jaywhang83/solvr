@@ -6,3 +6,8 @@
 <h1>Admin</h1>
 {{/link-to}}
 {{outlet}}
+{{#if session.isAuthenticated}}
+  <button {{action 'signOut'}}>
+  {{fa-icon 'sign-out'}} Sign Out
+  </button>
+{{/if}}
