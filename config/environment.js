@@ -27,7 +27,10 @@ module.exports = function(environment) {
     'img-src': "'self' *",
     'style-src': "'self' 'unsafe-inline'",
     'frame-src': "'self' https://*.firebaseio.com"
-  }
+    },
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
+    }
   };
 
   if (environment === 'development') {

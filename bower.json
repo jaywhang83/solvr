@@ -8,6 +8,7 @@
     "Materialize": "materialize#^0.97.6",
     "firebase": "^2.1.0",
     "moment": "^2.12.0",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "materialize": "~0.97.0"
   }
 }
