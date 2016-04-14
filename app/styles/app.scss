@@ -69,6 +69,18 @@
   height: 250px;
 }
 
-.nav {
-  background-color: transparent;
+div.caption {
+  height: 55em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.caption h1 {
+   margin: 0;
+   font-size: 200px;
+   font-family: 'Audiowide', cursive;
+   color: rgba(248, 248, 255, 0.8);
+   text-shadow: black 0.1em 0.2em 0.4em;
+  //  font-family: 'Poiret One', cursive;
 }
