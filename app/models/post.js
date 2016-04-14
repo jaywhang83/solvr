@@ -10,6 +10,6 @@ export default Model.extend({
   date: DS.attr(),
   isOpen: DS.attr(),
   latlng: DS.attr(),
-  distance: 0
-  // solvr: DS.attr()
+  distance: 0,
+  applicants: DS.hasMany('applicant', {async: true})
 });

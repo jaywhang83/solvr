@@ -27,11 +27,9 @@ export default Ember.Component.extend({
     changeFilter(value){
       if(value === 'date'){
         this.set('filter', ['date:desc']);
-          console.log(this.get('sortedList'));
       }
       if(value === 'reward'){
         this.set('filter', ['reward:desc']);
-          console.log(this.get('sortedList'));
       }
       if(value === 'distance'){
         this.set('filter', ['distance:asc']);

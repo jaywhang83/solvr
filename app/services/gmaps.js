@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   googleMaps: window.google.maps,
   geocoder: new google.maps.Geocoder(),
+  infoWindow: new google.maps.InfoWindow(),
   createMap(container, options){
     return new this.googleMaps.Map(container, options);
   },
@@ -22,11 +23,20 @@ export default Ember.Service.extend({
       });
     });
   },
-  createMarker(map, position){
+  createMarker(map, position, post){
     var marker = new google.maps.Marker({
       map: map,
       position: position
     });
+    var self = this;
+    marker.addListener('click', function() {
+    self.get('infoWindow').setContent(post.get('location'));
+    this.setAnimation(google.maps.Animation.BOUNCE);
+    setTimeout(function() {
+      marker.setAnimation(false);
+    }, 2050);
+    self.get('infoWindow').open(map, marker);
+  });
     return marker;
   },
   clearMarkers(){
@@ -40,7 +50,7 @@ export default Ember.Service.extend({
    var markers = [];
    posts.forEach(function(post){
      var address = JSON.parse(post.get('latlng'));
-       var newMarker = self.createMarker(map, address);
+       var newMarker = self.createMarker(map, address, post);
        markers.push(newMarker);
      });
    self.set('postboard-markers', markers);

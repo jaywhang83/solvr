@@ -4,3 +4,4 @@
 <p>{{model.post.description}}</p>
 <p>Reward: ${{model.post.reward}}</p>
 {{post-map post=model.post}}
+{{apply-btn user=model.post.user.email currentUser=session.currentUser}}

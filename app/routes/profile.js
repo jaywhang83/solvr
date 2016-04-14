@@ -19,7 +19,7 @@ export default Ember.Route.extend({
       newPost.save().then(function(){
         return user.save();
       });
-      this.transitionTo('postboard');
+      this.transitionTo('/');
     }
   }
 });
