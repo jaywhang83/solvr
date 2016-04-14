@@ -2,7 +2,7 @@
 <div class="backgroundImage2"></div>
 {{outlet}}
 <div class="container">
-  <div class="profileBox card">
+  <div class="profileBox z-depth-2">
   <h3>Welcome {{model.user.[0].firstName}} {{model.user.[0].lastName}}!</h3>
   <h5>Email: {{model.user.[0].email}}</h5>
   <h5>Address: {{model.user.[0].address}}</h5>
@@ -11,9 +11,13 @@
   <br>
 
   {{user.post}}
-
-  {{new-post sendPost="savePost" user=model.user.[0]}}
-  {{update-profile update="update" user=model.user.[0]}}
-
+  <div class="row">
+    <div class="col s3">
+      {{new-post sendPost="savePost" user=model.user.[0]}}
+    </div>
+    <div class="col s3">
+      {{update-profile update="update" user=model.user.[0]}}
+    </div>
   </div>
+</div>
 </div>

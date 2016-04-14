@@ -2,16 +2,16 @@
 
   <div class="card-action">
     {{#link-to 'post' post.id}}
-      <h4>{{post.title}} - By: {{post.user.firstName}} {{post.user.lastName}}</h4>
+      <h4>{{post.title}}</h4>
     {{/link-to}}
   </div>
 
   <div class="card-content">
-    <h3></h3>
+    <h4>By: {{post.user.firstName}} {{post.user.lastName}}</h4>
     <h4>{{post.location}}</h4>
     <h4>{{post.distance}} miles away</h4>
     <h4>{{date-format post.date}}</h4>
-    <h5>Reward: ${{post.reward}}</h5>
+    <h5>Budget: ${{post.reward}}</h5>
   </div>
 
 </div>

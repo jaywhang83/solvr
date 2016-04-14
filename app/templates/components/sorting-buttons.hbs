@@ -1,13 +1,12 @@
-<h4>Sort by: </h4>
-
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendFilter' 'date' }}>Date</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendFilter' 'reward' }}>Reward</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendFilter' 'distance' }}>Distance</button>
+<h4>Radius: </h4>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendRadius' 10000 }}>All</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendRadius' 50 }}>50</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendRadius' 250 }}>250</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendRadius' 500 }}>500</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendRadius' 1000 }}>1000</button>
 <br>
 
-<h4>Radius: </h4>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendRadius' 50 }}>50</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendRadius' 250 }}>250</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendRadius' 500 }}>500</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendRadius' 1000 }}>1000</button>
-<button class="btn-small waves-effect waves-light btn green" type="button" {{action 'sendRadius' 10000 }}>All</button>
+<h4>Sort by: </h4>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendFilter' 'date' }}>Date</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendFilter' 'reward' }}>Budget</button>
+<button class="btn-small waves-effect waves-light btn black" type="button" {{action 'sendFilter' 'distance' }}>Distance</button>
