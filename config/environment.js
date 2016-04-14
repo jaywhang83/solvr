@@ -5,6 +5,8 @@ module.exports = function(environment) {
     modulePrefix: 'solvr',
     environment: environment,
     baseURL: '/',
+    firebase: 'https://solvrapp.firebaseio.com/',
+    torii: {sessionServiceName: 'session'},
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

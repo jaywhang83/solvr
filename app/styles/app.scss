@@ -1,2 +1,29 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
+
+.backgroundImage {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url(https://4.bp.blogspot.com/-RK_kKy37FRw/U0uOGnKotwI/AAAAAAAAyR8/xT70kDE0dwI/s0/2nd+Prague+in+Tilt-Shift_HD.jpg);
+  width: 1400px;
+  height: 1000px;
+
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.content {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
