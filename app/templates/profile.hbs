@@ -8,6 +8,9 @@
   <h5>Phone Number: {{model.user.[0].phoneNumber}}</h5>
   <h5>Skills: {{model.user.[0].skills}}</h5>
   <br>
+
+{{user.post}}
+
   {{new-post sendPost="savePost" user=model.user.[0]}}
   {{update-profile update="update" user=model.user.[0]}}
 </div>
