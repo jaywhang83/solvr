@@ -1,53 +1,48 @@
-<div>
-    <h1>Sign Up</h1>
+<div class="container">
+
+  <div>
+      <h1>Sign Up</h1>
+  </div>
+
+  <form class="input-field">
+    <div class="input-field">
+      <label for="email">Email</label>
+      {{input value=email}}
+    </div>
+
+    <div class="input-field">
+      <label for="password">password</label>
+      {{input value=password}}
+    </div>
+
+    <div class="input-field">
+      <label for="firstName">First Name</label>
+      {{input value=firstName}}
+    </div>
+
+    <div class="input-field">
+      <label for="lastName">Last Name</label>
+      {{input value=lastName}}
+    </div>
+
+    <div class="input-field">
+      <label for="address">Address</label>
+      {{input value=address}}
+    </div>
+
+    <div class="input-field">
+      <label for="phoneNumber">Phone Number</label>
+      {{input value=phoneNumber}}
+    </div>
+
+    <div class="input-field">
+      <label for="skills">Skills</label>
+      {{input value=skills}}
+    </div>
+
+    <button class="waves-effect waves-light btn green" {{action 'signUp'}}>
+        {{fa-icon 'user-plus'}} Sign Up
+    </button>
+  </form>
+
 </div>
-<!-- {{input
-    type='text'
-    class='form-control'
-    value=email
-    placeholder='email'
-}}
-{{input
-    type='password'
-    class='form-control'
-    value=password
-    placeholder='password'
-}} -->
-<form class="input-field">
-  <div>
-    <label for="firstName">Email</label>
-    {{input value=email}}
-  </div>
-  <div>
-    <label for="firstName">password</label>
-    {{input value=password}}
-  </div>
-  <div>
-    <label for="firstName">First Name</label>
-    {{input value=firstName}}
-  </div>
-
-  <div class="input-field">
-    <label for="lastName">Last Name</label>
-    {{input value=lastName}}
-  </div>
-
-  <div class="input-field">
-    <label for="address">Address</label>
-    {{input value=address}}
-  </div>
-
-  <div class="input-field">
-    <label for="phoneNumber">Phone Number</label>
-    {{input value=phoneNumber}}
-  </div>
-
-  <div class="input-field">
-    <label for="skills">Skills</label>
-    {{input value=skills}}
-  </div>
-
-  <button class="waves-effect waves-light btn green" {{action 'signUp'}}>
-      {{fa-icon 'user-plus'}} Sign Up
-  </button>
-</form>

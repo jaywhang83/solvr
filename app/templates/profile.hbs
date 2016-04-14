@@ -1,7 +1,8 @@
 
 <div class="backgroundImage2"></div>
 {{outlet}}
-<div class="profileBox">
+<div class="container">
+  <div class="profileBox card">
   <h3>Welcome {{model.user.[0].firstName}} {{model.user.[0].lastName}}!</h3>
   <h5>Email: {{model.user.[0].email}}</h5>
   <h5>Address: {{model.user.[0].address}}</h5>
@@ -9,8 +10,10 @@
   <h5>Skills: {{model.user.[0].skills}}</h5>
   <br>
 
-{{user.post}}
+  {{user.post}}
 
   {{new-post sendPost="savePost" user=model.user.[0]}}
   {{update-profile update="update" user=model.user.[0]}}
+
+  </div>
 </div>
