@@ -1,7 +1,6 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
 
-
 .backgroundImage {
   position: fixed;
   left: 0;
@@ -41,6 +40,24 @@
   background-position: center center;
 }
 
+.backgroundImage3 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  padding-top: 20px;
+  display: block;
+  background-image: url(https://images.unsplash.com/photo-1447678523326-1360892abab8);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
 .content {
   position: fixed;
   left: 0;
@@ -49,16 +66,33 @@
   // margin-left: 20px;
   // margin-right: 20px;
 }
-.post {
-  border: 1px dotted black;
+// .post {
+//   border: 1px dotted black;
+// }
+
+.card {
+  background-color: light blue;
+}
+.card-action {
+  padding-top: -2000px;
+  padding: 0;
+  height: 90px;
+
+}
+
+.card-content {
+  margin: none;
+  padding: none;
 }
 
 .profileBox {
   background-color: white;
   border: black dotted 1px;
-  padding: 20px;
-  margin-top:20px;
+  padding: 25px;
+  margin-top:10%;
 }
+
+
 
 #postboard-map{
   width: 800px;

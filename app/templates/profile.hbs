@@ -1,13 +1,14 @@
 
 <div class="backgroundImage2"></div>
 
-<div class="profileBox">
-  <h3>Welcome {{model.user.[0].firstName}} {{model.user.[0].lastName}}!</h3>
-  <h5>Email: {{model.user.[0].email}}</h5>
-  <h5>Address: {{model.user.[0].address}}</h5>
-  <h5>Phone Number: {{model.user.[0].phoneNumber}}</h5>
-  <h5>Skills: {{model.user.[0].skills}}</h5>
-  <br>
-  {{new-post sendPost="savePost" user=model.user.[0]}}
-
+<div class="container">
+  <div class="profileBox card">
+    <h3>Welcome {{model.user.[0].firstName}} {{model.user.[0].lastName}}!</h3>
+    <h5>Email: {{model.user.[0].email}}</h5>
+    <h5>Address: {{model.user.[0].address}}</h5>
+    <h5>Phone Number: {{model.user.[0].phoneNumber}}</h5>
+    <h5>Skills: {{model.user.[0].skills}}</h5>
+    <br>
+    {{new-post sendPost="savePost" user=model.user.[0]}}
+  </div>
 </div>
