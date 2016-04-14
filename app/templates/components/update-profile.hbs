@@ -1,0 +1,43 @@
+{{#if updateProfileForm}}
+<h4>Update your profile:</h4>
+<div>
+  <form class="input-field">
+    <div>
+      <label for="email">Email</label>
+      {{input value=email}}
+    </div>
+
+    <div class="input-field">
+      <label for="firstName">First Name</label>
+      {{input value=firstName}}
+    </div>
+
+    <div class="input-field">
+      <label for="lastName">Last Name</label>
+      {{input value=lastName}}
+    </div>
+
+    <div class="input-field">
+      <label for="address">Address</label>
+      {{input value=address}}
+    </div>
+
+    <div class="input-field">
+      <label for="phoneNumber">Phone Number</label>
+      {{input value=phoneNumber}}
+    </div>
+
+    <div class="input-field">
+      <label for="skills">Skills</label>
+      {{input value=skills}}
+    </div>
+
+    <button class="waves-effect waves-light btn green" {{action 'update' user}}>
+        {{fa-icon 'user-plus'}} Save
+    </button>
+  </form>
+</div>
+{{else}}
+<button class="waves-effect waves-light btn green" {{action 'updateProfileForm'}}>
+    {{fa-icon 'user-plus'}} Update</button>
+{{/if}}

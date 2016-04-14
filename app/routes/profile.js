@@ -20,6 +20,16 @@ export default Ember.Route.extend({
         return user.save();
       });
       this.transitionTo('postboard');
-    }
+    },
+    update(user, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          user.set(key,params[key]);
+        }
+      });
+      console.log(user);
+      user.save();
+      this.transitionTo('index');
+    },
   }
 });

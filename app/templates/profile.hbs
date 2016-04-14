@@ -1,7 +1,8 @@
 {{outlet}}
-<h1>Welcome: {{model.user.[0].email}}</h1>
+<h1>Welcome: {{model.user.[0].firstName}}</h1>
 <h1>{{model.user.[0].email}}</h1>
-<h1>{{model.user.[0].firstName}}</h1>
+<h1>{{model.user.[0].firstName}} {{model.user.[0].lastName}}</h1>
 <h1>{{model.user.[0].address}}</h1>
 <h1>{{model.user.[0].phoneNumber}}</h1>
 {{new-post sendPost="savePost" user=model.user.[0]}}
+{{update-profile update="update" user=model.user.[0]}}
