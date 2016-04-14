@@ -52,10 +52,10 @@ export default Ember.Service.extend({
 
     var lat2 = address2.lat;
     var lon2 = address2.lng;
-    var lat1 = 45.523;
-    var lon1 = -122.67;
+    var lat1 = address1.lat;
+    var lon1 = address1.lng;
 
-    var R = 6371;
+    var R = 3961;
     var x1 = lat2-lat1;
     var dLat = toRad(x1);
     var x2 = lon2-lon1;
