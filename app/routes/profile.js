@@ -27,7 +27,6 @@ export default Ember.Route.extend({
           user.set(key,params[key]);
         }
       });
-      console.log(user);
       user.save();
       this.transitionTo('index');
     },

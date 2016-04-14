@@ -16,7 +16,6 @@ export default Ember.Component.extend({
         skills: this.get('skills'),
 
       };
-      console.log(params);
       this.set('updateProfileForm', false);
       this.sendAction('update', user, params);
     }
