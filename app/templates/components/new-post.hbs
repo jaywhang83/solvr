@@ -4,13 +4,13 @@
     {{input value=title}}
     <label for="location">Location: </label>
     {{input value=location}}
-    <label for="reward">Reward: $</label>
+    <label for="reward">Budget: $</label>
     {{input value=reward type=number}}
     <label for="description">Description: </label>
     {{input value=description}}
-    <button class="waves-effect waves-light btn green" type="button" {{action 'submitForm'}}>Submit</button>
-    <button class="waves-effect waves-light btn green" type="button" {{action 'showForm'}}>X</button>
+    <button class="waves-effect waves-light btn black" type="button" {{action 'submitForm'}}>Submit</button>
+    <button class="waves-effect waves-light btn black" type="button" {{action 'showForm'}}>{{fa-icon 'times-circle'}}</button>
   </form>
   {{else}}
-    <button class="waves-effect waves-light btn green" type="button" {{action 'showForm'}}>New Post</button>
+    <button class="waves-effect waves-light btn black" type="button" {{action 'showForm'}}>{{fa-icon 'comment-o'}} New Post</button>
   {{/if}}

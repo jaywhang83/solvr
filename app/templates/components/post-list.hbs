@@ -1,8 +1,14 @@
-{{postboard-map posts=filteredList user=user}}
-<h2>Current Jobs: </h2>
-{{sorting-buttons sendOption="changeSorting" sendFilter="changeFilter" sendRadius="changeRadius"}}
-<div>
-{{#each filteredList as |post|}}
-  {{post-tile post=post}}
-{{/each}}
+
+  {{postboard-map posts=filteredList user=user}}
+<div class="container">
+  <div class="sortingBox z-depth-2">
+    <h2>Current Jobs: </h2>
+    {{sorting-buttons sendOption="changeSorting" sendFilter="changeFilter" sendRadius="changeRadius"}}
+    <div>
+    {{#each filteredList as |post|}}
+      {{post-tile post=post}}
+    {{/each}}
+    </div>
+
+  </div>
 </div>

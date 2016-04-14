@@ -1,28 +1,31 @@
-<div>
-    <h1>Sign In</h1>
+<div class="container">
+
+  <div>
+      <h1>Sign In</h1>
+  </div>
+  <div class="input-field">
+  {{input
+      type='text'
+      class='form-control'
+      value=email
+      placeholder='email'
+  }}
+  </div>
+  <div class="input-field">
+  {{input
+      type='password'
+      class='form-control'
+      value=password
+      placeholder='password'
+  }}
+  </div>
+  {{#if session.isWorking}}
+  <button disabled='disabled'>
+          {{fa-icon 'spinner' spin=true}} Signing in...
+      </button>
+  {{else}}
+      <button class = "waves-effect waves-light btn black"{{action 'signIn' 'password'}}>
+          {{fa-icon 'sign-in'}} Sign In
+      </button>
+  {{/if}}
 </div>
-<div class="input-field">
-{{input
-    type='text'
-    class='form-control'
-    value=email
-    placeholder='email'
-}}
-</div>
-<div class="input-field">
-{{input
-    type='password'
-    class='form-control'
-    value=password
-    placeholder='password'
-}}
-</div>
-{{#if session.isWorking}}
-<button disabled='disabled'>
-        {{fa-icon 'spinner' spin=true}} Signing in...
-    </button>
-{{else}}
-    <button class = "waves-effect waves-light btn green"{{action 'signIn' 'password'}}>
-        {{fa-icon 'sign-in'}} Sign In
-    </button>
-{{/if}}
