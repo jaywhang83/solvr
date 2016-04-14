@@ -13,13 +13,10 @@ export default Ember.Route.extend({
   },
   actions: {
     savePost(params){
-      console.log(params);
       var newPost = this.store.createRecord('post', params);
       var user = params.user;
-      console.log(user);
       user.get('posts').addObject(newPost);
       newPost.save().then(function(){
-        console.log(user.get('posts'));
         return user.save();
       });
       this.transitionTo('postboard');

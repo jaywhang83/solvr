@@ -1,43 +1,51 @@
-<div class="backgroundImage"></div>
-<div class="content">
+<!-- <div class="content"> -->
 
-
-  <h2 id="title">Solvr</h2>
-  <!-- navbar goes here -->
-  <div class='page-header'>
-      <h5>You must be signed in to use this app</h5>
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Solvr</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            {{#link-to 'sign-up' class='list-group-item'}}
+              Sign Ups
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'sign-in' class='list-group-item'}}
+              Sign In
+            {{/link-to}}
+          </li>
+          <li>
+            {{#if session.isAuthenticated}}
+              {{#link-to 'profile' session.uid}}
+                profile
+              {{/link-to}}
+              <a {{action 'signOut'}}>
+                {{fa-icon 'sign-out'}} Sign Out
+              </a>
+            {{/if}}
+          </li>
+          <li>
+            {{#link-to 'postboard'}}
+              Posts
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'index'}}
+              Home
+            {{/link-to}}
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-  <div class='list-group'>
-      {{#link-to 'sign-up' class='list-group-item'}}
-          Sign Up
-      {{/link-to}}
-      {{#link-to 'sign-in' class='list-group-item'}}
-          Sign In
-      {{/link-to}}
-      <!-- () -->
-      {{#link-to 'postboard'}}
-      <h1>Posts</h1>
-      {{/link-to}}
-      {{#link-to 'index'}}
-      <h1>Home</h1>
-      {{/link-to}}
-      {{#if session.isAuthenticated}}
-      {{#link-to 'profile' session.uid}}profile{{/link-to}}
+<!-- </div> -->
 
-        <button {{action 'signOut'}}>
-        {{fa-icon 'sign-out'}} Sign Out
-        </button>
-      {{/if}}
-      <!-- () -->
-  </div>
-  <div class="container">
-    {{outlet}}
-  </div>
-
-
-  <footer>
-
-  </footer>
-
+<div class="container">
+  {{outlet}}
 </div>
+
+<footer>
+</footer>
+
 {{md-modal-container}}
