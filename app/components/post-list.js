@@ -17,10 +17,11 @@ export default Ember.Component.extend({
   sortedList: Ember.computed.sort('posts', 'filter'),
   filter: ['date:desc'],
   filteredList: Ember.computed('sortedList','radius', function(){
+    var user = this.get('user');
     var radius = this.get('radius');
     var self = this;
     return this.get('sortedList').filter(function(post){
-      return post.get('distance') <= radius;
+      return post.get('distance') <= radius && user.get('email') !== post.get('user').get('email');
     });
   }),
   actions: {
