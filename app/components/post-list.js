@@ -8,7 +8,6 @@ export default Ember.Component.extend({
     this.get('posts').forEach(function(post){
       var address = JSON.parse(post.get('latlng'));
       var distance = parseInt(self.get('gmaps').getDistance(address, userAddress).toFixed(1));
-      console.log(typeof distance);
       post.set('distance', distance);
     })
   },

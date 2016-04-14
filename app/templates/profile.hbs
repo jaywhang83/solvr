@@ -9,5 +9,10 @@
   <h5>Skills: {{model.user.[0].skills}}</h5>
   <br>
   {{new-post sendPost="savePost" user=model.user.[0]}}
-
+</div>
+<div class="posts">
+  <h2>My Posts : </h2>
+  {{#each model.user.[0].posts as |post|}}
+  {{post-tile post=post}}
+  {{/each}}
 </div>
