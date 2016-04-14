@@ -9,7 +9,8 @@ export default Ember.Route.extend({
         return results.filter(function(user){
           return user.get('email') === session.get('currentUser').email;
         });
-      })
+      }),
+      applications: this.store.findAll('application')
     });
   },
   actions: {
