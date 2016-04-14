@@ -1,4 +1,13 @@
 {{#if isOwner}}
 {{else}}
-<button type="button" name="button">Apply</button>
+  {{#if isSelected}}
+      <form>
+        <label for="">Your message: </label>
+        {{input value=msg}}
+      </form>
+      <button type="button" {{action 'sendApplication'}}>Submit</button>
+      <button type="button" {{action 'showForm'}}>Undo</button>
+    {{else}}
+    <button type="button" {{action 'showForm'}}>Apply</button>
+  {{/if}}
 {{/if}}
