@@ -7,12 +7,12 @@
   <form class="input-field">
     <div class="input-field">
       <label for="email">Email</label>
-      {{input value=email}}
+      {{input value=email type="email"}}
     </div>
 
     <div class="input-field">
-      <label for="password">password</label>
-      {{input value=password}}
+      <label for="password">Password</label>
+      {{input value=password type="password"}}
     </div>
 
     <div class="input-field">
@@ -40,7 +40,7 @@
       {{input value=skills}}
     </div>
 
-    <button class="waves-effect waves-light btn gold" {{action 'signUp'}}>
+    <button class="waves-effect waves-light btn black" {{action 'signUp'}}>
         {{fa-icon 'user-plus'}} Sign Up
     </button>
   </form>
