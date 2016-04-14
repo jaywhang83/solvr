@@ -1,9 +1,8 @@
-{{postboard-map posts=posts user=user}}
+{{postboard-map posts=filteredList user=user}}
 <h2>Current Jobs: </h2>
 {{sorting-buttons sendOption="changeSorting" sendFilter="changeFilter" sendRadius="changeRadius"}}
 <div>
 {{#each filteredList as |post|}}
-{{post.distance}}
   {{post-tile post=post}}
 {{/each}}
 </div>
