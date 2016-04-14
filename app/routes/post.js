@@ -24,6 +24,9 @@ export default Ember.Route.extend({
         post.get('applications').addObject(newApplication);
         post.save();
       });
+    },
+    deleteApplication(application){
+      application.destroyRecord();
     }
   }
 });

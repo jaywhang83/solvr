@@ -29,7 +29,11 @@ export default Ember.Component.extend({
       this.set('isSelected', false);
     },
     sendUnapply(){
-      this.sendAction('sendUnapply');
+      var self = this;
+      var application = this.get('currentUser').get('applications').filter(function(application){
+        return application.get('post').get('id') === self.get('post').id;
+      })
+      this.sendAction('sendUnapply', application[0]);
     }
   }
 });
