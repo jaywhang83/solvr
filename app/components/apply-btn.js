@@ -5,13 +5,11 @@ export default Ember.Component.extend({
     return this.get('user').get('email') === this.get('currentUser').get('email');
   }),
   isSelected: false,
-  hasApplied: Ember.computed('user.applications.@each', function(){
+  hasApplied: Ember.computed('currentUser.applications.@each', function(){
     var post_id = this.get('post').id;
     var flag = false;
-    console.log(this.get('user').get('applications').get('length'));
-    this.get('user').get('applications').forEach(function(application){
+    this.get('currentUser').get('applications').forEach(function(application){
       if (application.get('post').get('id') === post_id){
-        console.log('hello');
         flag = true;
       }
     });

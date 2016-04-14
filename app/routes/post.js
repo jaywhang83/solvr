@@ -17,7 +17,6 @@ export default Ember.Route.extend({
     saveApplication(params){
       var newApplication = this.store.createRecord('application', params);
       var user = params.user;
-      console.log(user.toString());
       var post = params.post;
       newApplication.save().then(function(){
         user.get('applications').addObject(newApplication);
