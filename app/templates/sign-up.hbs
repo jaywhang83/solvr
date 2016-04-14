@@ -1,7 +1,7 @@
 <div>
     <h1>Sign Up</h1>
 </div>
-{{input
+<!-- {{input
     type='text'
     class='form-control'
     value=email
@@ -12,8 +12,16 @@
     class='form-control'
     value=password
     placeholder='password'
-}}
+}} -->
 <form class="input-field">
+  <div>
+    <label for="firstName">Email</label>
+    {{input value=email}}
+  </div>
+  <div>
+    <label for="firstName">password</label>
+    {{input value=password}}
+  </div>
   <div>
     <label for="firstName">First Name</label>
     {{input value=firstName}}

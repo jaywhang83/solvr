@@ -6,11 +6,11 @@
     {{input value=location}}
     <label for="reward">Reward: $</label>
     {{input value=reward type=number}}
-    <label for="description">description: </label>
+    <label for="description">Description: </label>
     {{input value=description}}
-    <button type="button" {{action 'submitForm'}}>Submit</button>
-    <button type="button" {{action 'showForm'}}>Undo</button>
+    <button class="waves-effect waves-light btn green" type="button" {{action 'submitForm'}}>Submit</button>
+    <button class="waves-effect waves-light btn green" type="button" {{action 'showForm'}}>X</button>
   </form>
   {{else}}
-    <button type="button" {{action 'showForm'}}>New Post</button>
+    <button class="waves-effect waves-light btn green" type="button" {{action 'showForm'}}>New Post</button>
   {{/if}}
