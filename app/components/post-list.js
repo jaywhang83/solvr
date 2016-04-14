@@ -11,10 +11,10 @@ export default Ember.Component.extend({
       post.set('distance', distance);
     })
   },
-  radius: 50,
+  radius: 10000,
   gmaps: Ember.inject.service('gmaps'),
   sortedList: Ember.computed.sort('posts', 'filter'),
-  filter: ['date:desc'],
+  filter: ['distance:asc'],
   filteredList: Ember.computed('sortedList','radius', function(){
     var user = this.get('user');
     var radius = this.get('radius');
