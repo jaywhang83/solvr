@@ -1,0 +1,6 @@
+<div class="posts">
+  {{#link-to 'post' application.post.id}}
+  <h5>{{application.post.title}} by {{application.user.firstName}} {{application.user.lastName}}</h5>
+  {{/link-to}}
+  <p>{{application.msg}}</p>
+</div>
