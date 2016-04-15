@@ -1,8 +1,15 @@
-{{outlet}}
-<h2>{{user.post.title}}</h2>
-{{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
-<h3>{{date-format model.post.date}}</h3>
-<p>{{model.post.description}}</p>
-<p>Reward: ${{model.post.reward}}</p>
-{{post-map post=model.post}}
-{{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication"}}
+<div class="container">
+  <div class="individualPost">
+    <div class="">
+    {{outlet}}
+    <h2>{{user.post.title}}</h2>
+    {{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
+    <h3>{{date-format model.post.date}}</h3>
+    <p>{{model.post.description}}</p>
+    <p>Reward: ${{model.post.reward}}</p>
+    {{post-map post=model.post}}
+    {{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication"}}
+    <br>
+    </div>
+  </div>
+</div>

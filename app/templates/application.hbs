@@ -1,50 +1,48 @@
 <!-- <div class="content"> -->
 
-<div class="navbar-fixed">
-    <nav>
+<div class="navbar-fixed nav">
+    <nav class="black">
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">Solvr</a>
         <ul class="right hide-on-med-and-down">
-          <li>
-            {{#link-to 'sign-up' class='list-group-item'}}
-              Sign Ups
-            {{/link-to}}
-          </li>
-          <li>
-            {{#link-to 'sign-in' class='list-group-item'}}
-              Sign In
-            {{/link-to}}
-          </li>
+
           <li>
             {{#if session.isAuthenticated}}
             {{log session.currentUser.location}}
               {{#link-to 'profile' session.uid}}
-                Profile
+                {{fa-icon 'user'}} Profile
               {{/link-to}}
               <a {{action 'signOut'}}>
                 {{fa-icon 'sign-out'}} Sign Out
               </a>
+              <li>
+                {{#link-to 'postboard'}}
+                  {{fa-icon 'comments-o'}} Posts
+                {{/link-to}}
+              </li>
+              {{else}}
+              <li>
+                {{#link-to 'sign-up' class='list-group-item'}}
+                  {{fa-icon 'user-plus'}} Sign Up
+                {{/link-to}}
+              </li>
+              <li>
+                {{#link-to 'sign-in' class='list-group-item'}}
+                  {{fa-icon 'sign-in'}} Sign In
+                {{/link-to}}
+              </li>
             {{/if}}
           </li>
-          <li>
-            {{#link-to 'postboard'}}
-              Posts
-            {{/link-to}}
-          </li>
-          <li>
-            {{#link-to 'index'}}
-              Home
-            {{/link-to}}
-          </li>
+
         </ul>
       </div>
     </nav>
   </div>
 <!-- </div> -->
 
-<div class="container">
+
   {{outlet}}
-</div>
+
 
 <footer>
 </footer>
