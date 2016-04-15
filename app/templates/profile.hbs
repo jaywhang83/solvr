@@ -10,7 +10,7 @@
     <h5>Phone Number: {{model.user.[0].phoneNumber}}</h5>
     <h5>Skills: {{model.user.[0].skills}}</h5>
     <br>
-  </div>
+
 
   <div class="row">
     <div class="col s3">
@@ -20,18 +20,21 @@
       {{update-profile update="update" user=model.user.[0]}}
     </div> -->
   </div>
+  </div>
+  
   <hr />
   <div class="card">
     <div class="posts">
-      <h2>My Posts : </h2>
+      <h3>My Posts: </h3>
       {{#each model.user.[0].posts as |post|}}
       {{#if post.isOpen}}
       {{post-tile post=post}}
       {{/if}}
       {{/each}}
     </div>
+    <hr />
     <div class="applications">
-      <h3>My applications</h3>
+      <h3>My applications: </h3>
       {{application-list applications=model.user.[0].applications}}
       {{user.post}}
     </div>

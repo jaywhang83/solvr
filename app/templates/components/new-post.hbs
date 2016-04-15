@@ -8,8 +8,10 @@
     {{input value=reward type=number}}
     <label for="description">Description: </label>
     {{input value=description}}
-    <button class="waves-effect waves-light btn black" type="button" {{action 'submitForm'}}>Submit</button>
-    <button class="waves-effect waves-light btn black" type="button" {{action 'showForm'}}>{{fa-icon 'times-circle'}}</button>
+      <button class="waves-effect waves-light btn black" type="button" {{action 'submitForm'}}>Submit</button>
+      <br>
+      <br>
+      <button class="waves-effect waves-light btn black" type="button" {{action 'showForm'}}>{{fa-icon 'times-circle'}}</button>
   </form>
   {{else}}
     <button class="waves-effect waves-light btn black" type="button" {{action 'showForm'}}>{{fa-icon 'comment-o'}} New Post</button>
