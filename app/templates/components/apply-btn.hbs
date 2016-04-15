@@ -1,4 +1,6 @@
 {{#if isOwner}}
+<h3>Applications: </h3>
+  {{application-list applications=post.applications }}
 {{else}}
   {{#if hasApplied}}
     <p>You already applied for this.</p>

@@ -1,5 +1,6 @@
 {{outlet}}
-  <h2>{{model.post.title}} - By: {{model.post.user.firstName}} {{model.post.user.lastName}}</h2>
+<h2>{{user.post.title}}</h2>
+{{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
 <h3>{{date-format model.post.date}}</h3>
 <p>{{model.post.description}}</p>
 <p>Reward: ${{model.post.reward}}</p>

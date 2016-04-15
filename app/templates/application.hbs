@@ -17,6 +17,7 @@
           </li>
           <li>
             {{#if session.isAuthenticated}}
+            {{log session.currentUser.location}}
               {{#link-to 'profile' session.uid}}
                 Profile
               {{/link-to}}
