@@ -2,13 +2,13 @@
   <div class="individualPost">
     <div class="">
     {{outlet}}
-    <h2>{{user.post.title}}</h2>
+    <h2>{{user.post.title}} {{model.post.isOpen}}</h2>
     {{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
     <h3>{{date-format model.post.date}}</h3>
     <h5>{{model.post.description}}</h5>
     <h5>Budget: ${{model.post.reward}}</h5>
     {{post-map post=model.post}}
-    {{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication"}}
+    {{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication" sendSolvr="saveSolvr"}}
     <br>
     </div>
   </div>

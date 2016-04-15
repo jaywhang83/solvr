@@ -1,14 +1,22 @@
 {{#if isOwner}}
-<h3>Applications: </h3>
-  {{#each post.applications as |application|}}
-
-  <h5>Candidate:
-  {{#link-to 'solvr' application.user.id}}
-    {{application.user.firstName}} {{application.user.lastName}}
-  {{/link-to}}
-  </h5>
-  {{/each}}
-  <p>{{application.msg}}</p>
+  {{#if post.isOpen}}
+    <h3>Applications: </h3>
+      {{#each post.applications as |application|}}
+      <h5>Candidate:
+      {{#link-to 'solvr' application.user.id}}
+        {{application.user.firstName}} {{application.user.lastName}}
+      {{/link-to}}
+      {{choose-solvr sendSolvr="sendSolvr" solvr=application.user}}
+      </h5>
+      {{/each}}
+      <p>{{application.msg}}</p>
+    {{else}}
+      <h3>Solved by:
+        {{#link-to 'solvr' application.user.id}}
+          {{post.solvr.firstName}} {{application.solvr.lastName}}
+        {{/link-to}}
+      </h3>
+    {{/if}}
 {{else}}
   {{#if hasApplied}}
     <p>You already applied for this.</p>
@@ -22,7 +30,9 @@
           <button type="button" {{action 'sendApplication'}}>Submit</button>
           <button type="button" {{action 'showForm'}}>Undo</button>
         {{else}}
+        {{#if post.isOpen}}
         <button type="button" {{action 'showForm'}}>Apply</button>
+        {{/if}}
       {{/if}}
   {{/if}}
 {{/if}}
