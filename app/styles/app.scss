@@ -1,6 +1,12 @@
 @import 'materialize';
 @import 'ember-cli-materialize';
 
+@media (max-width: 1000px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+
 .backgroundImage {
   position: fixed;
   left: 0;
@@ -96,10 +102,11 @@
 
 .sortingBox {
   background-color: rgba(255, 255, 255, 0.6);
-  margin: 0;
   border-radius: 20px;
   margin: 20px;
   padding: 10px;
+  margin-right: 1000px;
+  width: 750px;
 }
 
 .brand-logo {
@@ -115,8 +122,10 @@
   height: 500px;
 }
 #post-map{
-  width: 250px;
-  height: 250px;
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 794px;
+  height: 500px;
 }
 
 div.caption {

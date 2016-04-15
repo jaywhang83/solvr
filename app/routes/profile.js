@@ -12,6 +12,13 @@ export default Ember.Route.extend({
       applications: this.store.findAll('application')
     });
   },
+
+  didInsertElement: function() {
+    v$('.collapsible').collapsible({
+      accordion : true;
+    });;
+ },
+
   actions: {
     savePost(params){
       var newPost = this.store.createRecord('post', params);
