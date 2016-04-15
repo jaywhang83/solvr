@@ -34,6 +34,10 @@ export default Ember.Component.extend({
         return application.get('post').get('id') === self.get('post').id;
       })
       this.sendAction('sendUnapply', application[0]);
+    },
+    sendSolvr(params){
+      params.post = this.get('post');
+      this.sendAction('sendSolvr', params);
     }
   }
 });

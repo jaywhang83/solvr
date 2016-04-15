@@ -1,17 +1,20 @@
 <div class="container">
+
   <div class="individualPost col s12">
     <div class="card">
       <div class="card-image">
         {{post-map post=model.post}}
       </div>
       <div class="card-content">
-        <h4>{{model.post.title}}</h4>
-        <h5>By: {{model.post.user.firstName}} {{model.post.user.lastName}}</h5>
+        <h4>{{user.post.title}}</h4>
+      {{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
         <h5>{{date-format model.post.date}}</h5>
         <hr />
         <h5>{{model.post.description}}</h5>
         <h5>Willing to pay: ${{model.post.reward}}</h5>
+        {{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication" sendSolvr="saveSolvr"}}
       </div>
+
     </div>
   </div>
 </div>

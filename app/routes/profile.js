@@ -27,7 +27,7 @@ export default Ember.Route.extend({
       newPost.save().then(function(){
         return user.save();
       });
-      this.transitionTo('postboard');
+      this.transitionTo('post', newPost.id);
     },
     update(user, params) {
       Object.keys(params).forEach(function(key) {
@@ -36,7 +36,7 @@ export default Ember.Route.extend({
         }
       });
       user.save();
-      this.transitionTo('index');
+      this.transitionTo('profile', this.get('session').get('uid'));
     },
   }
 });
