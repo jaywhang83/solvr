@@ -5,8 +5,8 @@
     <h2>{{user.post.title}}</h2>
     {{profile-link user=model.post.user currentUser=model.user.[0] session=session}}
     <h3>{{date-format model.post.date}}</h3>
-    <p>{{model.post.description}}</p>
-    <p>Reward: ${{model.post.reward}}</p>
+    <h5>{{model.post.description}}</h5>
+    <h5>Budget: ${{model.post.reward}}</h5>
     {{post-map post=model.post}}
     {{apply-btn user=model.post.user currentUser=model.user.[0] post=model.post sendApplication="saveApplication" sendUnapply="deleteApplication"}}
     <br>

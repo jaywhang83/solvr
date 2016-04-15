@@ -1,6 +1,14 @@
 {{#if isOwner}}
 <h3>Applications: </h3>
-  {{application-list applications=post.applications }}
+  {{#each post.applications as |application|}}
+
+  <h5>Candidate:
+  {{#link-to 'solvr' application.user.id}}
+    {{application.user.firstName}} {{application.user.lastName}}
+  {{/link-to}}
+  </h5>
+  {{/each}}
+  <p>{{application.msg}}</p>
 {{else}}
   {{#if hasApplied}}
     <p>You already applied for this.</p>
