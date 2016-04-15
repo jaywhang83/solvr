@@ -11,5 +11,5 @@ export default Model.extend({
   isOpen: DS.attr(),
   latlng: DS.attr(),
   distance: 0,
-  applications: DS.hasMany('application', {async: true})
+  applications: DS.hasMany('application', {async: true}),
 });

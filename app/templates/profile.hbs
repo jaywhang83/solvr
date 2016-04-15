@@ -21,7 +21,9 @@
 <div class="posts">
   <h2>My Posts : </h2>
   {{#each model.user.[0].posts as |post|}}
+  {{#if post.isOpen}}
   {{post-tile post=post}}
+  {{/if}}
   {{/each}}
 </div>
 <div class="applications">

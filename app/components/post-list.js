@@ -20,7 +20,7 @@ export default Ember.Component.extend({
     var radius = this.get('radius');
     var self = this;
     return this.get('sortedList').filter(function(post){
-      return post.get('distance') <= radius && user.get('email') !== post.get('user').get('email');
+      return post.get('distance') <= radius && user.get('email') !== post.get('user').get('email') && post.isOpen;
     });
   }),
   actions: {
