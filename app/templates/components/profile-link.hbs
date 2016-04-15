@@ -1,0 +1,9 @@
+{{#if isOwner}}
+{{#link-to 'profile' session.uid}}
+   <h3>{{user.firstName}} {{user.lastName}}</h3>
+{{/link-to}}
+{{else}}
+{{#link-to 'solvr' user.id}}
+  <h3>{{user.firstName}} {{user.lastName}}</h3>
+{{/link-to}}
+{{/if}}

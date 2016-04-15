@@ -7,8 +7,9 @@ export default Ember.Route.extend({
       user: this.store.findAll('user').then(function(results){
         return results.filter(function(user){
           return user.get('email') === session.get('currentUser').email;
-        })
-      })
+        });
+      }),
+      applications: this.store.findAll('application')
     });
   },
   actions: {

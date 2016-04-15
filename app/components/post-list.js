@@ -8,14 +8,13 @@ export default Ember.Component.extend({
     this.get('posts').forEach(function(post){
       var address = JSON.parse(post.get('latlng'));
       var distance = parseInt(self.get('gmaps').getDistance(address, userAddress).toFixed(1));
-      console.log(typeof distance);
       post.set('distance', distance);
     })
   },
-  radius: 50,
+  radius: 10000,
   gmaps: Ember.inject.service('gmaps'),
   sortedList: Ember.computed.sort('posts', 'filter'),
-  filter: ['date:desc'],
+  filter: ['distance:asc'],
   filteredList: Ember.computed('sortedList','radius', function(){
     var user = this.get('user');
     var radius = this.get('radius');
@@ -28,11 +27,9 @@ export default Ember.Component.extend({
     changeFilter(value){
       if(value === 'date'){
         this.set('filter', ['date:desc']);
-          console.log(this.get('sortedList'));
       }
       if(value === 'reward'){
         this.set('filter', ['reward:desc']);
-          console.log(this.get('sortedList'));
       }
       if(value === 'distance'){
         this.set('filter', ['distance:asc']);

@@ -1,0 +1,20 @@
+{{#if isOwner}}
+<h3>Applications: </h3>
+  {{application-list applications=post.applications }}
+{{else}}
+  {{#if hasApplied}}
+    <p>You already applied for this.</p>
+    <button type="button" {{action 'sendUnapply'}}>Withdraw Application</button>
+      {{else}}
+      {{#if isSelected}}
+          <form>
+            <label for="">Your message: </label>
+            {{input value=msg}}
+          </form>
+          <button type="button" {{action 'sendApplication'}}>Submit</button>
+          <button type="button" {{action 'showForm'}}>Undo</button>
+        {{else}}
+        <button type="button" {{action 'showForm'}}>Apply</button>
+      {{/if}}
+  {{/if}}
+{{/if}}

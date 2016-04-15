@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('sign-up');
   this.route('sign-in');
   this.authenticatedRoute('profile', {path: 'profile/:user_id'});
+  this.route('solvr', {path: 'solvr/:user_id'});
 });
 
 export default Router;

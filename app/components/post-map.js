@@ -10,6 +10,6 @@ export default Ember.Component.extend({
         zoom: 15
       };
       var map = this.get('gmaps').createMap(container, options);
-      this.get('gmaps').createMarker(map, address);
+      this.get('gmaps').createMarker(map, address, this.get('post'));
   }
 });

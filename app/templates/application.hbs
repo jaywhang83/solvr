@@ -8,6 +8,7 @@
 
           <li>
             {{#if session.isAuthenticated}}
+            {{log session.currentUser.location}}
               {{#link-to 'profile' session.uid}}
                 {{fa-icon 'user'}} Profile
               {{/link-to}}
