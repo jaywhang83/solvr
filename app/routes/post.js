@@ -32,11 +32,10 @@ export default Ember.Route.extend({
       var solvr = params.solvr;
       var post = params.post;
       post.get('applications').forEach(function(application){
-          post.get('applications').removeObject(application);
-          console.log(application.get('user').get('applications'));
           application.get('user').get('applications').removeObject(application);
           application.destroyRecord();
       });
+      // post.get('applications').removeObjects();
       post.set('isOpen', false);
       post.set('solvr', solvr);
       post.save();
