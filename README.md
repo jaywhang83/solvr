@@ -1,7 +1,11 @@
 # Solvr
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This App allows user to view and post jobs. 
+
+#### By Jay Whang, Christopher Kuiper, Simon Temple, Lorenzo 4/10/2016
+
+## Description
+This application allows user to add and edit profile and post jobs. Job post can be viewed by price and distance from users location. 
 
 ## Prerequisites
 
@@ -51,3 +55,10 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+## Support and contact details
+
+For Support contact me at: jaywhang83@gmail.com
+
+### License
+
+The MIT License (MIT)
